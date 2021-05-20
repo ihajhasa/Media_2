@@ -15,7 +15,7 @@ export class SportComponent implements OnInit {
   ngOnInit(): void {
     this._news.getPublicAllNews()
     .subscribe((response) => {
-      this.newsList = response.filter((article: any) => article.category.toLocaleLowerCase().localeCompare("sports"))
+      this.newsList = response.filter((article: any) => !article.category.toLocaleLowerCase().localeCompare("sports"))
     }, (err) => {
       alert('Error getting news')
       console.log(err)
