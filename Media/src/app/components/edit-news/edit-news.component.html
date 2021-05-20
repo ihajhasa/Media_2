@@ -1,0 +1,96 @@
+<div class="d-flex justify-content-center">
+    <div class="title">
+        <h3>Edit News</h3>
+    </div>
+</div>
+<br />
+<div class="d-flex justify-content-center">
+
+    <div class="col-md-8 col-lg-8 order-md-2 col-lg-2">
+        <form [formGroup]="editNewsForm" (ngSubmit)="onSubmit()">
+            <div class="form-row form-group">
+                <input  type="text"
+                        name="title"
+                        formControlName="title"
+                        class="form-control"
+                        placeholder="Title"
+                        [ngClass] = "{'is-invalid': submitted && controls.title.errors}" 
+                        autofocus/>
+                <div *ngIf="submitted && controls.title.errors">
+                    <div *ngIf="controls.title.errors.required">Title is required.</div>
+                </div>
+            </div>
+        
+            <div class="form-row form-group">
+                <input  type="text"
+                        name="description"
+                        formControlName="description"
+                        class="form-control"
+                        placeholder="Description"
+                        [ngClass] = "{'is-invalid': submitted && controls.description.errors}" />
+                <div *ngIf="submitted && controls.description.errors">
+                    <div *ngIf="controls.description.errors.required">Description is required.</div>
+                </div>
+            </div>
+
+            <div class="form-row form-group">
+                <input  type="text"
+                        name="category"
+                        formControlName="category"
+                        class="form-control"
+                        placeholder="Category"
+                        [ngClass] = "{'is-invalid': submitted && controls.category.errors}" />
+                <div *ngIf="submitted && controls.category.errors">
+                    <div *ngIf="controls.category.errors.required">Category is required.</div>
+                </div>
+            </div>
+        
+            <div class="form-row form-group">
+                <input  type="text"
+                        name="url"
+                        formControlName="url"
+                        class="form-control"
+                        placeholder="URL"
+                        [ngClass] = "{'is-invalid': submitted && controls.url.errors}" />
+                <div *ngIf="submitted && controls.url.errors">
+                    <div *ngIf="controls.url.errors.required">URL is required.</div>
+                   <!--<div *ngIf="controls.url.errors.pattern">URL is not proper.</div>-->
+                </div>
+            </div>
+            
+            <div class="form-row form-group">
+                <input  type="text"
+                        name="urlToImage"
+                        formControlName="urlToImage"
+                        class="form-control"
+                        placeholder="URL of Image"
+                        [ngClass] = "{'is-invalid': submitted && controls.urlToImage.errors}" />
+                <div *ngIf="submitted && controls.urlToImage.errors">
+                    <div *ngIf="controls.urlToImage.errors.required">URL of Image is required.</div>
+                   <!--<div *ngIf="controls.url.errors.pattern">URL is not proper.</div>-->
+                </div>
+            </div>
+            
+            <div class="form-row form-group">
+                <input  type="date"
+                        name="publishedDate"
+                        formControlName="publishedDate"
+                        class="form-control"
+                        placeholder="Published Date"
+                        [ngClass] = "{'is-invalid': submitted && controls.publishedDate.errors}" />
+                <div *ngIf="submitted && controls.publishedDate.errors">
+                    <div *ngIf="controls.publishedDate.errors.required">Published Date is required.</div>
+                   <!--<div *ngIf="controls.url.errors.pattern">URL is not proper.</div>-->
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <input type="submit" value="Edit" class="btn btn-primary">
+                <input type="reset" value="Reset" class="btn btn-warning">
+            </div>
+        
+        </form>
+    </div>
+
+
+</div>

@@ -1,0 +1,20 @@
+<div *ngIf="newsList.length === 0; then emptyBlock else carouselBlock"></div>
+
+<ng-template #emptyBlock>
+    <h4> There are no news :( </h4>
+</ng-template>
+
+<ng-template #carouselBlock>
+    <ngb-carousel [interval]=5000>
+        <ng-template *ngFor="let news of newsList" ngbSlide>
+            <a href="{{news.url}}">
+                <div class="picsum-img-wrapper">
+                    <img class="d-block w-100" [src]="news.urlToImage" alt="{{news.title}}" />
+                </div>
+                <div class="carousel-caption">
+                    <h5>{{news.title}}</h5>
+                </div>
+            </a>
+        </ng-template>
+    </ngb-carousel>
+</ng-template>

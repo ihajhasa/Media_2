@@ -1,0 +1,57 @@
+<div class="d-flex justify-content-center">
+    <div class="title">
+        <h3>Register Here</h3>
+    </div>
+</div>
+<br />
+<div class="d-flex justify-content-center">
+
+    <div class="col-md-8 col-lg-8 order-md-2 col-lg-2">
+        <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+            <div class="form-row form-group">
+                <input  type="text"
+                        name="name"
+                        formControlName="name"
+                        class="form-control"
+                        placeholder="Name"
+                        [ngClass] = "{'is-invalid': submitted && controls.name.errors}" 
+                        autofocus/>
+                <div *ngIf="submitted && controls.name.errors">
+                    <div *ngIf="controls.name.errors.required">Name is required.</div>
+                </div>
+            </div>
+        
+            <div class="form-row form-group">
+                <input  type="text"
+                        name="email"
+                        formControlName="email"
+                        class="form-control"
+                        placeholder="Email"
+                        [ngClass] = "{'is-invalid': submitted && controls.email.errors}" />
+                <div *ngIf="submitted && controls.email.errors">
+                    <div *ngIf="controls.email.errors.required">Email is required.</div>
+                </div>
+            </div>
+        
+            <div class="form-row form-group">
+                <input  type="password"
+                        name="password"
+                        formControlName="password"
+                        class="form-control"
+                        placeholder="Password"
+                        [ngClass] = "{'is-invalid': submitted && controls.password.errors}" />
+                <div *ngIf="submitted && controls.password.errors">
+                    <div *ngIf="controls.password.errors.required">Password is required.</div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <input type="submit" value="Register" class="btn btn-primary">
+                <input type="reset" value="Reset" class="btn btn-warning">
+            </div>
+        
+        </form>
+    </div>
+
+
+</div>
