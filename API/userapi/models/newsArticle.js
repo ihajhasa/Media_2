@@ -5,7 +5,7 @@ const newsSchema = new mongoose.Schema({
     description: {type:String, required:true},
     url:{type:String},
     urlToImage:{type:String},
-    publishedAt:{type:String, required:true},
+    publishedAt:{type: String, required:true},
     category:{type:String, required:true}
 },{
     versionKey:false

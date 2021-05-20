@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const newsArticleRoute = require('./routes/newsArticle'); //adjust to angular route
 const weatherRoute = require('./routes/weather');         //adjust to angular route
+const chatRoute = require('./userChat');
 
 mongoose.connect(
     'mongodb://localhost:127.0.0.1:27017/test',
@@ -24,7 +25,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use('/newsArticle', newsArticleRoute);
-app.use('/weather', weatherRoute);
+app.use('/weather', weatherRoute);    
+app.use('/chat', chatRoute);
 
 module.exports = app;
 

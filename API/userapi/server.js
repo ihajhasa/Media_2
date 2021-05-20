@@ -3,7 +3,7 @@ const app = require('./app')
 
 const PORT = 3000
 
-const server = http.createServer(app)
+const server = http.createServer(app);
 
 server.listen(PORT, (err) => {
   if(!err) {
