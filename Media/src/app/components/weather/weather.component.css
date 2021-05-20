@@ -1,48 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
-
-html,
-body {
-  height: 100%
+.carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#divWeatherMain{
+  display: block;
+  border-radius: 10px;
+  width: 200px;
+  height: 240px;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgb(52, 49, 206) 75%, rgb(5, 10, 151) 100%);
+  color: white;;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.weatherWidgetRow{
+  display:block;
+  margin:0 auto;
+  width: fit-content;
+}
+.sun{
+  margin-top: 10px;
+  color: yellow;
 }
 
-* {
-  padding: 0px;
-  margin: 0px
+.moon{
+  margin-top: 10px;
+  color: white;
 }
 
-body {
-  background-color: #a5a5b1;
-  display: grid;
-  place-items: center
+.cloudDiv{
+  margin-top: -40px;
 }
 
-.card {
-  background-color: #ffffff;
-  border-radius: 50px;
-  color: #6f707d;
-  font-family: 'Marcellus', serif
+
+.cloud{
+  color: rgb(104, 175, 197);
+  filter: drop-shadow( 1px 1px 5px rgb(104, 175, 197));
+  animation-name: cloudMovement;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
 }
 
-#heading {
-  font-size: 55px;
-  color: #2b304d
-}
-
-.temp {
-  place-items: center
-}
-
-.temp-details>p>span,
-.grey {
-  color: #a3acc1;
-  font-size: 12px
-}
-
-.fa {
-  color: #a5a5b1
-}
-
-*:focus {
-  outline: none
-}
- 
