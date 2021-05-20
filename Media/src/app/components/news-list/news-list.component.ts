@@ -37,5 +37,8 @@ export class NewsListComponent implements OnInit {
     console.log('edit is called for id', editnews._id);
     this.router.navigate(['/admin/edit-news',editnews._id])
   }
+  addnews(){
+    this.router.navigate(['/admin/add-news'])
+  }
 
 }

@@ -37,18 +37,18 @@ export class EditNewsComponent implements OnInit {
     {
       if (!response) {
         alert('There was an error updating ... please try again later')
-        this.router.navigate(['admin'])
+        this.router.navigate(['/admin'])
       }
       else {
         alert('updated successfully')
-        this.router.navigate(['admin'])
+        this.router.navigate(['/admin'])
       }
     },
     
     (err) => {
         alert('There was an error updating ... please try again later')
         console.log(err)
-        this.router.navigate(['admin'])
+        this.router.navigate(['/admin'])
     })
   }
   
@@ -89,6 +89,9 @@ export class EditNewsComponent implements OnInit {
     })
 
     
+  }
+  addnews(){
+    this.router.navigate(['/admin/add-news'])
   }
 
 }

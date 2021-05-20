@@ -1,7 +1,10 @@
 <div class="d-flex justify-content-center">
     <div class="title">
         <h3> News</h3>
-    </div>
+    </div><br/>
+</div>
+<div class="d-flex justify-content-center">
+<a (click)='addnews()' class="btn btn-primary" role="button">Add New News</a>
 </div>
 <br />
 <div class="d-flex justify-content-center">
@@ -24,8 +27,8 @@
             <td>{{each_new.publishedAt}}</td>
             <td>{{each_new.category}}</td>
             <td>
-                <a (click) = 'editme(each_new)' name="" id="" class="btn btn-primary"  role="button">Edit</a>
-                <a (click) = 'deleteme(each_new)' name="" id="" class="btn btn-primary"  role="button">Delete</a>
+                <a (click) = 'editme(each_new)' name="" id="" class="btn btn-warning"  role="button">Edit</a>
+                <a (click) = 'deleteme(each_new)' name="" id="" class="btn btn-danger"  role="button">Delete</a>
 
             
             </td>

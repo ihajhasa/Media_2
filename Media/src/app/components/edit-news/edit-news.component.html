@@ -5,6 +5,11 @@
 </div>
 <br />
 <div class="d-flex justify-content-center">
+    <a (click)='addnews()' class="btn btn-primary" role="button">Add New News</a>
+    </div>
+    <br/>
+    
+<div class="d-flex justify-content-center">
 
     <div class="col-md-8 col-lg-8 order-md-2 col-lg-2">
         <form [formGroup]="editNewsForm" (ngSubmit)="onSubmit()">
