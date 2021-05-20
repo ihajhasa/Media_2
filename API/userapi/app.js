@@ -1,25 +1,30 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
-const cors = require('cors')
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-const app = express()
-app.use(cors())
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json())
-
-const newsArticleRoute = require('./routes/newsArticle');
-const weatherRoute = require('./routes/weather');
+const newsArticleRoute = require('./routes/newsArticle'); //adjust to angular route
+const weatherRoute = require('./routes/weather');         //adjust to angular route
 
 mongoose.connect(
-        'mongodb://localhost:27017/test',
-        {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        },
-        (err) => err ? console.log('something went wrong') : console.log(`server is running`))
+    'mongodb://localhost:127.0.0.1:27017/test',
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    },
+    (err) => err ? console.log('something got wrong', err) : console.log('db connected')
+)
 
-app.use('/newsArticles', newsArticleRoute);
-app.use('/weather', weatherRoute)
+const app = express();
+
+app.use(cors());
+
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(bodyParser.json());
+
+app.use('/newsArticle', newsArticleRoute);
+app.use('/weather', weatherRoute);
 
 module.exports = app;
+
