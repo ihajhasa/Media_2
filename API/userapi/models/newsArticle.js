@@ -11,4 +11,4 @@ const newsSchema = new mongoose.Schema({
     versionKey:false
 })
 
-module.exports = mongoose.model('newsArticle', newsSchema);
+module.exports = mongoose.model('news', newsSchema);
