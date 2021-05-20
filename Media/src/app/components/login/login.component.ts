@@ -37,12 +37,17 @@ export class LoginComponent implements OnInit {
                 alert('Error logging in. Please try again later.')
             }
             else {
-                alert(JSON.stringify(response, null, 4))
                 this._user.storeLocalUser(response)
                 this.router.navigate(['admin'])
             }
         }, (err) => {
-            alert('Error logging in. Please try again later.')
+
+            if (err.status === 404) {
+                alert('Invalid Credentials.')
+            }
+            else {
+                alert('Server error. Please try again later.')
+            }
             console.log(err)
         })
     }

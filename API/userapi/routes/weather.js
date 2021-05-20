@@ -37,6 +37,7 @@ router.get('/', (req, res) =>{
        });
     });
     */
+   console.log('HELLO')
     var dataPromise = getWeather(/*API URL + ipLocation*/);
     dataPromise.then(JSON.parse)
                .then(function(weatherData){
