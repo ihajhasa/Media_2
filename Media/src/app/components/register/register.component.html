@@ -30,6 +30,7 @@
                         [ngClass] = "{'is-invalid': submitted && controls.email.errors}" />
                 <div *ngIf="submitted && controls.email.errors">
                     <div *ngIf="controls.email.errors.required">Email is required.</div>
+                    <div *ngIf="controls.email.errors.email">Email is not in proper format.</div>
                 </div>
             </div>
         

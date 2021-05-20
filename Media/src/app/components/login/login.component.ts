@@ -10,11 +10,14 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent implements OnInit {
 
-    loginForm: FormGroup;
+    loginForm: FormGroup = this.formBuilder.group({
+        email: ["", Validators.required, Validators.email],
+        password: ["", Validators.required]
+    });
     submitted = false;
 
-    Email:string;
-    Password:string;
+    Email:string = "";
+    Password:string = "";
   
     constructor(
         private formBuilder: FormBuilder,
@@ -27,10 +30,26 @@ export class LoginComponent implements OnInit {
           
           if (this.loginForm.invalid)
               return;
+
+        this._user.loginUser(this.loginForm.value)
+        .subscribe((response) => {
+            if (response === null) {
+                alert('Error logging in. Please try again later.')
+            }
+            else {
+                alert(JSON.stringify(response, null, 4))
+                this._user.storeLocalUser(response)
+                this.router.navigate(['admin'])
+            }
+        }, (err) => {
+            alert('Error logging in. Please try again later.')
+            console.log(err)
+        })
     }
 
     get controls() { return this.loginForm.controls;}
-    ngOnInit() void {
+
+    ngOnInit(): void {
         this.loginForm = this.formBuilder.group({
             email: ["", Validators.required, Validators.email],
             password: ["", Validators.required]
