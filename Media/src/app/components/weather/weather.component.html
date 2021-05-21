@@ -1,31 +1,21 @@
-<div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-4 col-sm-12 col-xs-12">
-        <div *ngIf="weather; then weatherBlock else emptyBlock"></div>
 
-        <ng-template #weatherBlock>
-          <div class="card p-4">
-            <div class="d-flex">
-              <h6 class="flex-grow-1">{{weather.city.name}}'s Weather</h6>
-              <h6>{{date}}</h6>
-            </div>
-            <div class="d-flex flex-column temp mt-5 mb-3">
-              <h1 class="mb-0 font-weight-bold" id="heading"> max: {{this.weather.list[0].temp.max}}° C </h1>
-              
-              <h1 class="mb-0 font-weight-bold" id="heading"> min: {{this.weather.list[0].temp.min}}° C </h1>
-            </div>
-            <div class="d-flex flex-column temp mt-5 mb-3">
-              <div> <img src="{{weatherImage}}
-                 "> </div>
-                 <span class="small grey">{{this.weather.list[0].weather[0].description}}</span>
-   
-            </div>
-          </div>
-        </ng-template>
-
-        <ng-template #emptyBlock>
-          <h4 style="margin-top:30px; margin-bottom:30px;">NO Weather Data</h4>
-        </ng-template>
-      </div>
-    </div>
-  </div>
+  <div class="container">
+	<div class="row">
+		<div class="col">
+			<div class="weather-card rain">
+				<div class="top" style="background: url('{{weatherImage}}')">
+					<div class="wrapper">
+				
+						<h1 class="heading">{{weather.list[0].weather[0].description}}</h1>
+						<h3 class="location">{{weather.city.name}}</h3>
+						<p class="temp">
+							<span class="temp-value"> {{weather.list[0].temp.max}}</span>
+							<span class="deg">0</span>
+							<a href="javascript:;"><span class="temp-type">C</span></a>
+						</p>
+					</div>
+				</div>
+			
+		</div>
+	</div>
+</div>
