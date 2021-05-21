@@ -31,9 +31,9 @@ io.on('connection',  (socket) => {
     socket.on('chat', (data) => {
         console.log("chat => nickname : ", socket.nickname)
         const d = new Date()
-        const ts = d.toLocaleString()
+        const ts = d.toLocaleTimeString()
         console.log("ts : ", ts)
-        const response = `${ts} : ${socket.nickname} : ${data.message}`
+        const response = `${socket.nickname} @ ${ts}:: ${data.message}`
         console.log("rs : ", response)
         io.emit('chat', response)
     });
