@@ -5,3 +5,13 @@ button {
 .open {
     margin-top: 7px;
 }
+.mynav a{
+    margin-right: 30px;
+}
+.mynav a:hover{
+    border-bottom: 2px solid #ffffff;
+}
+.active a{
+    border-bottom: 2px solid #ffffff;
+
+}
