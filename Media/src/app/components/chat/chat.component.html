@@ -1,11 +1,22 @@
-<div class="chat-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
-    <h1>Chat</h1>
+<input  type="text"
+        [(ngModel)]="nickname"
+>
+<button class="btn btn-primary"
+        (click)="updateNickname()">Update</button>
 
-    <label for="msg"><b>Message</b></label>
-    <textarea placeholder="Type message.." name="msg" required></textarea>
 
-    <button type="submit" class="btn">Send</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
-</div>
+<br />
+<br />
+
+<textarea [value]="chat" disabled>
+
+</textarea>
+
+<br />
+<br />
+
+<input  type="text"
+        [(ngModel)]="message"
+>
+<button class="btn btn-primary"
+        (click)="sendMessage()">Send</button>
