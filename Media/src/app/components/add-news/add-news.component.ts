@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormControlName, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { from } from 'rxjs';
 import { NewsService } from '../../services/news.service';
 
@@ -25,10 +26,11 @@ export class AddNewsComponent implements OnInit {
       res => console.log(res),
       err => console.log(err)
     )
+    this.router.navigate(['/admin/'])
 
   }
 
-  constructor(private _newsService:NewsService) { 
+  constructor(private _newsService:NewsService,private router: Router, private route: ActivatedRoute) { 
 
   }
 
