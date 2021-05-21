@@ -37,21 +37,11 @@ router.get('/', (req, res) =>{
        });
     });
     location = localStorage.getItem('userlocation').replace(/"([^"]+(?="))"/g, '$1');
-    var url = 'http://api.openweathermap.org/data/2.5/forecast?q='+location+'&appid=0e2b9776b743a95a999b6b8a744efb5c';
+    var url = 'http://api.openweathermap.org/data/2.5/forecast?q='+location+'&mode=json&units=imperial&cnt=5&&appid=0e2b9776b743a95a999b6b8a744efb5c';
     var dataPromise = getWeather(url);
     dataPromise.then(JSON.parse)
                .then(function(weatherData){
-                   res.send(weatherData)        //access in angular as "weatherData"
-                   
-                   /*
-                    weatherData.name = london
-                    weatherData.list[x].dt = day of week
-                    weatherData.list[x].temp.day = temperature during the day
-                    weatherData.list[x].temp.max = max temperature of day
-                    weatherData.list[x].temp.min = minimum temperature of day
-                    weatherData.list[x].weather[0].main = type (rain, sunny, ect)
-                    */
-
+                   res.send(weatherData)       
                 })
 })
 
