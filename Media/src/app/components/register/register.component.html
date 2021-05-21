@@ -1,12 +1,15 @@
-<div class="d-flex justify-content-center">
-    <div class="title">
-        <h3>Register Here</h3>
-    </div>
-</div>
-<br />
-<div class="d-flex justify-content-center">
 
-    <div class="col-md-8 col-lg-8 order-md-2 col-lg-2">
+<div class="bodycss-register">
+
+<div class="d-flex justify-content-center">
+    
+    <div class="col-md-8 col-lg-8 order-md-2 col-lg-2 register">
+        <div class="registerbox justify-content-center ">
+            <img src="../../../assets/image/login-Img.png" alt="" class="avatar" >
+        </div>
+        <div class="title">
+            <h3>Register Here</h3>
+        </div>
         <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
             <div class="form-row form-group">
                 <input  type="text"
@@ -55,4 +58,5 @@
     </div>
 
 
+</div>
 </div>
