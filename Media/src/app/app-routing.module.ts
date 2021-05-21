@@ -19,10 +19,6 @@ import { AdminGuardService } from './services/admin-guard.service';
 
 const routes: Routes = [
   {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
     path: 'login',
     component: LoginComponent
   },
@@ -59,6 +55,10 @@ const routes: Routes = [
         path: 'edit-news/:id',
         component: EditNewsComponent
       }, 
+      {
+        path: 'register',
+        component: RegisterComponent
+      },
       {
         path: '',
         component: NewsListComponent
