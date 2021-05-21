@@ -15,6 +15,7 @@ const server = http.createServer(app).listen(PORT, (err) => {
   }
 })
 
+//UPON LOAD UP, chat loads
 const io = require('socket.io')(server);
 
 io.on('connection',  (socket) => {

@@ -1,18 +1,18 @@
 const express = require('express');
 const request = require('request');
 const router = express.Router();
-/*
-const iplocate = require('public-ip');
-const publicIp = require('node-iplocate');
-*/
 
+const LocalStorage = require('node-localstorage').LocalStorage;
+let localStorage = new LocalStorage('./scratch');
+const iplocate = require('node-iplocate');
+const publicIp = require('public-ip')
 
-const weatherUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?q=London&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29";
-//change later down the line (1) create weather account (2) get user iplocation
+var location = localStorage.getItem('userlocal')
+
 
 function getWeather(url) {
     var options = {
-        url: weatherUrl, /* change to url if querying for specific IP location*/
+        url: url,
         headers: {
             'User-Agent': 'request'
         }
@@ -29,15 +29,17 @@ function getWeather(url) {
 }
 
 router.get('/', (req, res) =>{
-    /*
-    var ipLocation = publicIp.v4().then(ip => {
+    
+    publicIp.v4().then(ip => {
         iplocate(ip).then(function(results) {
             let respo = JSON.stringify(results.city, null, 2)
-            return respo;
+            localStorage.setItem('userlocal',respo)
        });
     });
-    */
-    var dataPromise = getWeather(/*API URL + ipLocation*/);
+    location = localStorage.getItem('userlocal').replace(/"([^"]+(?="))"/g, '$1');
+    var url = 'http://api.openweathermap.org/data/2.5/forecast?q='+location+'&appid=0e2b9776b743a95a999b6b8a744efb5c';
+    console.log(url);
+    var dataPromise = getWeather(url);
     dataPromise.then(JSON.parse)
                .then(function(weatherData){
                    res.send(weatherData)        //access in angular as "weatherData"
