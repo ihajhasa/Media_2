@@ -1,58 +1,94 @@
-<!--delete later-->
-<html>
-<head>
-    <title>Chat Example</title>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script>
-        var socket = io.connect();
+<html ang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Simple Chat</title>
+        
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- jQuery needs to be loaded before bootstrap-->
 
-        socket.on('chat', function (data) {
-            var msg = data.nick+':'+data.location+':'+data.message;
-            $('textarea').val($('textarea').val()+msg+'\n'); 
-        });
-
-        socket.on('userlist', (data)=>{
-            data.map((item)=>{
-                $('#activeuser').append(`UserId: <strong>${item}<strong><br/>`)
-            })
-            let total = data.length;
-            document.getElementById('listu').innerHTML= total
-            $('b').val(total);
-        })
-
-        // Handle UI
-        $(function() {
-            // Set nickname
-            $('#nick').on('click', function() {
-                socket.emit('nick', $('#nickText').val());
+        <!-- Bootstrap Start -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap End -->
+        
+        <script>
+            const socket = io()
+            let isNickSet = false
+            // chat event
+            socket.on('chat', function (data) {
+                $('textarea').val($('textarea').val()+data+'\n')
             });
-            // Send chat message
-            $('#chat').on('click', function() {
-                socket.emit('chat', {
-                    message:$('#chatText').val()
+    
+            
+            $(function() {
+                // Set nickname
+                $('#nick').on('click', function(event) {
+                    event.preventDefault() // stop refresh
+                    socket.emit('nick', $('#nickText').val());
+                    $('#nick').hide()
+                    isNickSet = true
+                });
+
+                // Send chat message
+                $('#chat').on('click', function(event) {
+                    event.preventDefault()
+                    if(isNickSet){
+                        socket.emit('chat', {
+                             message:$('#chatText').val()
+                        });
+                    }
+                    $('#chatText').val('')
                 });
             });
-        });
 
-        var uiusers = sessionStorage.getItem('users');
-        console.log(uiusers)
+        </script>
+
+    </head>
+    <body>
+    <div class="container">
+    <div class="row">
+        <!--/col-6-->
+        <div class="col-md-6"> 
+        <div class="panel">
+        <div class="panel-body">
+            <center>
+                <h5></h5>
+                <h5>Simple Chat App</h5>
+            </center>
+             <div class="panel panel-info">
+                <div class="panel-body">
+                    <form >
+                        <div class="form-group">
+                            <p>
+                                <input id="nickText" type="text" style="padding: 5px; border: 1px solid peru;" />
+                                <button id="nick" style="padding: 5px; background-color: powderblue">Set Nickname</button>
+                            </p>
+                            <textarea style="font-size: 12px; height:300px; width:100%; border: 1px solid purple;"></textarea>
+                            <hr />
+                            <p>
+                                <input id="chatText" type="text" style="padding: 5px; width:100%;border: 2px solid green;" />
+                                <button id="chat" style="padding: 5px; color: yellow; background-color: black">Send Chat Message</button>
+                            </p>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>                              
+        </div>
+        <!--/col-6-->
+    </div>
+    </div>
+    <script>
+        
+        var nickname = prompt("Please enter your nickname : ")
+        console.log("nickname : ", nickname)
+        $('#nickText').val(nickname)
+        
     </script>
-</head>
-<body>
-    <h1>Simple Chat with Node</h1>
-    <p>
-        <input id="nickText" type="text"/>
-        <button id="nick">Set Nickname</button>
-    </p>
-    <textarea style="height:300px;width:500px;"></textarea>
-    <p>
-        <input id="chatText" type="text"/>
-        <button id="chat">Send Chat Message</button>
-    </p>
-    <h2>Active User: <b id="listu"></b></h2>
-    <p id="activeuser">  
-       
-    </p>
-</body>
+    </body>
 </html>
