@@ -8,11 +8,12 @@
     <a (click)='addnews()' class="btn btn-primary" role="button">Add New News</a>
     </div>
     <br/>
-    
+
 <div class="d-flex justify-content-center">
 
     <div class="col-md-8 col-lg-8 order-md-2 col-lg-2">
         <form [formGroup]="editNewsForm" (ngSubmit)="onSubmit()">
+            <label for="title">Title</label>
             <div class="form-row form-group">
                 <input  type="text"
                         name="title"
@@ -27,6 +28,7 @@
             </div>
         
             <div class="form-row form-group">
+                <label for="Description">Description</label>
                 <input  type="text"
                         name="description"
                         formControlName="description"
@@ -39,6 +41,7 @@
             </div>
 
             <div class="form-row form-group">
+                <label for="category">Category</label>
                 <input  type="text"
                         name="category"
                         formControlName="category"
@@ -51,6 +54,8 @@
             </div>
         
             <div class="form-row form-group">
+                <label for="URL">URL</label>
+
                 <input  type="text"
                         name="url"
                         formControlName="url"
@@ -64,6 +69,8 @@
             </div>
             
             <div class="form-row form-group">
+                <label for="urlToImage">ImageURL</label>
+
                 <input  type="text"
                         name="urlToImage"
                         formControlName="urlToImage"
@@ -77,6 +84,8 @@
             </div>
             
             <div class="form-row form-group">
+                <label for="publishedDate">Published Date</label>
+
                 <input  type="date"
                         name="publishedDate"
                         formControlName="publishedDate"
