@@ -5,18 +5,21 @@
 </ng-template>
 
 <ng-template #newsTable>
-    <table class="table">
-        <thead>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Go To Article</th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let news of newsList">
-                <th>{{news.title}}</th>
-                <th>{{news.category}}</th>
-                <th><a href="{{news.url}}"><button class="btn btn-primary">Article</button></a></th>
-            </tr>
-        </tbody>
-    </table>
+
+    <div class="d-flex justify-content-center row">
+
+
+            <div *ngFor="let news of newsList" class="card col-xs-12 col-s-12 col-4" style="width: 18rem;">
+                <img class="card-img-top" [src]="news.urlToImage" [alt]="news.title"/>
+                <div class="card-body">
+                    <h6 class="card-title">{{news.title}}</h6>
+                    <p class="card-text">{{news.description.substring(0,50)}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{{news.url}}"><button class="btn btn-link">Go To Source</button></a>
+                </div>
+            </div>
+
+
+    </div>
 </ng-template>
