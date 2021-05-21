@@ -28,5 +28,7 @@ app.use('/newsArticle', newsArticleRoute);
 app.use('/weather', weatherRoute);    
 // app.use('/chat', chatRoute);
 
+
+
 module.exports = app;
 
