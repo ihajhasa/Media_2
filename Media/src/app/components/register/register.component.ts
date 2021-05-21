@@ -28,7 +28,6 @@ export class RegisterComponent implements OnInit {
 
     this._user.registerUser(fields).subscribe(
       (response) => {
-        this._user.storeLocalUser(response);
         this.router.navigate(["admin"])
       }, 
       (err) => {alert(JSON.stringify(err, null, 4))})
