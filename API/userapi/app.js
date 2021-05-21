@@ -3,9 +3,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const newsArticleRoute = require('./routes/newsArticle'); //adjust to angular route
-const weatherRoute = require('./routes/weather');         //adjust to angular route
-const chatRoute = require('./routes/userChat');
+const newsArticleRoute = require('./routes/newsArticle'); 
+const weatherRoute = require('./routes/weather');         
 
 mongoose.connect(
     'mongodb://localhost:127.0.0.1:27017/test',
@@ -26,9 +25,6 @@ app.use(bodyParser.json());
 
 app.use('/newsArticle', newsArticleRoute);
 app.use('/weather', weatherRoute);    
-// app.use('/chat', chatRoute);
-
-
 
 module.exports = app;
 

@@ -3,7 +3,7 @@ const request = require('request');
 const router = express.Router();
 
 const LocalStorage = require('node-localstorage').LocalStorage;
-let localStorage = new LocalStorage('./scratch');
+let localStorage = new LocalStorage('./models');
 const iplocate = require('node-iplocate');
 const publicIp = require('public-ip')
 
@@ -33,12 +33,11 @@ router.get('/', (req, res) =>{
     publicIp.v4().then(ip => {
         iplocate(ip).then(function(results) {
             let respo = JSON.stringify(results.city, null, 2)
-            localStorage.setItem('userlocal',respo)
+            localStorage.setItem('userlocation',respo)
        });
     });
-    location = localStorage.getItem('userlocal').replace(/"([^"]+(?="))"/g, '$1');
+    location = localStorage.getItem('userlocation').replace(/"([^"]+(?="))"/g, '$1');
     var url = 'http://api.openweathermap.org/data/2.5/forecast?q='+location+'&appid=0e2b9776b743a95a999b6b8a744efb5c';
-    console.log(url);
     var dataPromise = getWeather(url);
     dataPromise.then(JSON.parse)
                .then(function(weatherData){
