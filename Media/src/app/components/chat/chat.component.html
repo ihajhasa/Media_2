@@ -1,22 +1,9 @@
-<input  type="text"
-        [(ngModel)]="nickname"
->
-<button class="btn btn-primary"
-        (click)="updateNickname()">Update</button>
 
-
+<textarea [value]="chat" class='lg-textarea' disabled rows="5" cols="80"></textarea>
 <br />
-<br />
-
-<textarea [value]="chat" disabled>
-
-</textarea>
-
-<br />
-<br />
-
-<input  type="text"
-        [(ngModel)]="message"
->
-<button class="btn btn-primary"
-        (click)="sendMessage()">Send</button>
+<div class="d-flex justify-content-between">
+        <input  type="text" [formControl] = "nickname" class='sm-textarea' />  
+        <button class="btn btn-warning btn-sm" (click)="updateNickname()">Your Name</button><br/>
+        <input  type="text" [formControl]="message" />
+        <button class="btn btn-info btn-sm" (click)="sendMessage()">Send Message</button>
+</div>

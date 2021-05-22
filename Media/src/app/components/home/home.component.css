@@ -7,4 +7,26 @@
     -o-background-size: cover;
     background-size: cover;
   }
-  
+
+.chatBox {
+  display: block;
+  max-height: 210px;
+  z-index: 11;
+  position: absolute;
+  margin-top: -250px;
+  border: 2px solid #f7f7f7;
+  margin-left: 10px;
+  background: white;
+  border-radius: 10%;
+  padding: 12px;
+}
+
+.icons {
+  border: 0.5px solid #f7f7f7;
+  background: lightgrey;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}

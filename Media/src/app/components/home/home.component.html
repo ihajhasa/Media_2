@@ -1,2 +1,10 @@
 <app-weather></app-weather>
 <app-news-slider></app-news-slider>
+
+<div (click)="showChat = !showChat" class="icons">
+    <img src="../../../assets/icon/comment-dots-solid.svg"  aria-hidden="true" />
+</div>
+
+<div *ngIf="showChat" class="chatBox">
+    <app-chat></app-chat>
+</div>
