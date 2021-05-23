@@ -17,10 +17,14 @@
 		</div>-->
 		<ng-container class="col-md-2" *ngFor='let day of fiveDayForecast' >
 			<div class= "row">
+
 			<div class = "wrapper" style="background: url('{{weatherImage}}');border-radius: 15px;">
+				<h6 class="location" style="text-align:left;padding-left: 1em;">{{day.dt_txt|date:'short'}}</h6>
+
 				<div style="background: url('{{weatherImage}}')">
+
 					<h6 class="location" style="text-align:left;padding-left: 1em;">{{location}}</h6>
-					<h1 class="heading" style="text-align:center;">{{day.weather[0].description}}</h1>
+					<h3 class="heading" style="text-align:center;">{{day.weather[0].description}}</h3>
 					<p class="temp" style='text-align:right;'>
 						<span class="temp-value" >{{day.main.feels_like}}°F</span>
 					</p>

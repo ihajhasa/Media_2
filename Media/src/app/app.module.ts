@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+// import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,6 +50,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // AngularFontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
