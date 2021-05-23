@@ -23,6 +23,9 @@ import { NewsService } from './services/news.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AgmCoreModule } from '@agm/core';
 import { AdminComponent } from './components/admin/admin.component';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
+
 
 @NgModule({
   declarations: [
@@ -50,6 +53,7 @@ import { AdminComponent } from './components/admin/admin.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
+    FlashMessagesModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyChzHYUt99TH32WWkd4cn4LHkCcoV8HeA8'
     }),

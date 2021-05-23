@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
-  lat = 51.678418;
-  lng = 7.809007;
+  lat = 40.522964;
+  lng = -74.411674;
 
   constructor() { }
 
