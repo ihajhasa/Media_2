@@ -14,7 +14,9 @@
 						   padding-right: 0.5em;">
 						   {{day.weather[0].description}}</h4>
 				<p style="font-size:xx-small;text-align:center ;">
-						<b>{{day.dt_txt}}</b></p>
+						<b>{{day.dt_txt|date:'short'}}</b>
+
+					</p>
 				<p class="temp" 
 					style='text-align:right;
 						   padding-right: 0.5em;
