@@ -1,52 +1,51 @@
-
 <div class="container">
-  <div class="contact-parent">
-     <div class="contact-child child1">
-        <p>
-           <i class="fas fa-map-marker-alt"></i> Address <br />
-           <span> 379 Thornall St, Edison, NJ 08837
-           <br />
-           USA
-           </span>
-        </p>
-        <p>
-           <i class="fas fa-phone-alt"></i> Let's Talk <br />
-           <span> 074455555555</span>
-        </p>
-        <p>
-           <i class=" far fa-envelope"></i> General Support <br />
-           <span>contact@example.com</span>
-        </p>
-     </div>
-
-     <div class="contact-child child2">
-        <div class="inside-contact">
-           <h2>Contact Us</h2>
-           <flash-messages></flash-messages>
-           <form  >
-           <p>Name *</p>
-           <input id="txt_name" type="text"  required  [(ngModel)]="contact.name" name="name" #name="ngModel"  />
-           <div *ngIf="!name.valid && name.touched" class="alert alert-danger"  > Your name is required </div>
-
-          <p>Email *</p>
-          <input required id="txt_email" type="text" [(ngModel)]="contact.email" name="email" #email="ngModel" />
-          <div *ngIf="!email.valid && email.touched" class="alert alert-danger"  > A valid email address is required </div>
-           
-           <p>Subject *</p>
-           <input required id="txt_subject" type="text" [(ngModel)]="contact.subject" name="subject" #subject="ngModel" />
-           <div *ngIf="!subject.valid && subject.touched" class="alert alert-danger"  > A subject is required </div>
-
-           <p>Message *</p>
-           <textarea id="txt_message" rows="4" cols="20" Required required [(ngModel)]="contact.message" name="message" #message="ngModel" ></textarea>
-           <div *ngIf="!message.valid && message.touched" class="alert alert-danger"  > the message is required </div>
-
-           <input type="submit" id="btn_send" value="SEND" (click) = "showFlash()">
-          </form>
-          </div>
-     </div>
-  </div>
-</div>
-
-
-
-
+   <div class="contact-parent">
+      <div class="contact-child child1">
+         <p>
+            <i class="fas fa-map-marker-alt"></i> Address <br />
+            <span> 379 Thornall St, Edison, NJ 08837
+            <br />
+            USA
+            </span>
+         </p>
+         <p>
+            <i class="fas fa-phone-alt"></i> Let's Talk <br />
+            <span> 074455555555</span>
+         </p>
+         <p>
+            <i class=" far fa-envelope"></i> General Support <br />
+            <span>contact@example.com</span>
+         </p>
+      </div>
+ 
+      <div class="contact-child child2">
+         <div class="inside-contact">
+            <h2>Contact Us</h2>
+            <flash-messages></flash-messages>
+            <form  >
+            <p>Name *</p>
+            <input id="txt_name" type="text"  required  [(ngModel)]="contact.name" name="name" #name="ngModel"  />
+            <div *ngIf="!name.valid && name.touched" class="alert alert-danger"  > Your name is required </div>
+ 
+           <p>Email *</p>
+           <input required  id="txt_email" type="text" [(ngModel)]="contact.email" name="email" #email="ngModel" />
+           <div *ngIf="!email.valid && email.touched" class="alert alert-danger"  > A valid email address is required </div>
+            
+            <p>Subject *</p>
+            <input required id="txt_subject" type="text" [(ngModel)]="contact.subject" name="subject" #subject="ngModel" />
+            <div *ngIf="!subject.valid && subject.touched" class="alert alert-danger"  > A subject is required </div>
+ 
+            <p>Message *</p>
+            <textarea id="txt_message" rows="4" cols="20" Required required [(ngModel)]="contact.message" name="message" #message="ngModel" ></textarea>
+            <div *ngIf="!message.valid && message.touched" class="alert alert-danger"  > the message is required </div>
+ 
+            <button (click)="sendmessage()" >send</button>
+            <input type="submit" id="btn_send" value="SEND" (click) = "showFlash()">
+           </form>
+           </div>
+      </div>
+   </div>
+ </div>
+ 
+ 
+ 
