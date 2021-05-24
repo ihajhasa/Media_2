@@ -3,7 +3,7 @@
         <h3> News</h3>
     </div><br/>
 </div>
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center zoom">
 <a (click)='addnews()' class="btn btn-primary" role="button">Add New News</a>
 </div>
 <br />
@@ -27,8 +27,8 @@
             <td>{{each_new.publishedAt}}</td>
             <td>{{each_new.category}}</td>
             <td>
-                <a (click) = 'editme(each_new)' name="" id="" class="btn btn-warning"  role="button">Edit</a>&nbsp;
-                <a (click) = 'deleteme(each_new)' name="" id="" class="btn btn-danger"  role="button">Delete</a>
+                <a (click) = 'editme(each_new)' name="" id="" class="btn btn-warning zoom"  role="button">Edit</a>&nbsp;
+                <a (click) = 'deleteme(each_new)' name="" id="" class="btn btn-danger zoom"  role="button">Delete</a>
 
             
             </td>
