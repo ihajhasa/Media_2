@@ -15,7 +15,7 @@
                 <input  type="text"
                         name="name"
                         formControlName="name"
-                        class="form-control"
+                        class="form-control zoom"
                         placeholder="Name"
                         [ngClass] = "{'is-invalid': submitted && controls.name.errors}" 
                         autofocus/>
@@ -28,7 +28,7 @@
                 <input  type="text"
                         name="email"
                         formControlName="email"
-                        class="form-control"
+                        class="form-control zoom"
                         placeholder="Email"
                         [ngClass] = "{'is-invalid': submitted && controls.email.errors}" />
                 <div *ngIf="submitted && controls.email.errors">
@@ -41,7 +41,7 @@
                 <input  type="password"
                         name="password"
                         formControlName="password"
-                        class="form-control"
+                        class="form-control zoom"
                         placeholder="Password"
                         [ngClass] = "{'is-invalid': submitted && controls.password.errors}" />
                 <div *ngIf="submitted && controls.password.errors">
@@ -50,8 +50,8 @@
             </div>
             
             <div class="text-center">
-                <input type="submit" value="Register" class="btn btn-primary">
-                <input type="reset" value="Reset" class="btn btn-warning">
+                <input type="submit" value="Register" class="btn btn-primary zoom w-25">
+                <input type="reset" value="Reset" class="btn btn-warning zoom w-25">
             </div>
         
         </form>
