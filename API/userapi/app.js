@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const newsArticleRoute = require('./routes/newsArticle'); 
-const weatherRoute = require('./routes/weather');         
+const weatherRoute = require('./routes/weather');  
+const contactusRoute = require('./routes/contactus')       
 
 mongoose.connect(
     'mongodb://localhost:127.0.0.1:27017/test',
@@ -24,7 +25,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use('/newsArticle', newsArticleRoute);
-app.use('/weather', weatherRoute);    
+app.use('/weather', weatherRoute);  
+app.use('/contactus', contactusRoute);  
 
 module.exports = app;
 
