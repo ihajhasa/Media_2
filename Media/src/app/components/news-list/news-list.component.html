@@ -8,10 +8,10 @@
 </div>
 <br />
 <div class="d-flex justify-content-center">
-    <div class="col-md-8 col-lg-8 order-md-2 col-lg-2">
+    <div class="col-md-10 col-lg-10 order-md-2">
 
-<table class="table table-bordered">
-    <thead>
+<table class="table table-striped">
+    <thead class="thead-dark">
         <tr>
             <th>Title</th>
             <th>Descriptions</th>
@@ -21,13 +21,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let each_new of newslist">
+        <tr class="zoom" *ngFor = "let each_new of newslist">
             <td>{{each_new.title}}</td>
             <td>{{each_new.description}}</td>
             <td>{{each_new.publishedAt}}</td>
             <td>{{each_new.category}}</td>
             <td>
-                <a (click) = 'editme(each_new)' name="" id="" class="btn btn-warning"  role="button">Edit</a>
+                <a (click) = 'editme(each_new)' name="" id="" class="btn btn-warning"  role="button">Edit</a>&nbsp;
                 <a (click) = 'deleteme(each_new)' name="" id="" class="btn btn-danger"  role="button">Delete</a>
 
             
