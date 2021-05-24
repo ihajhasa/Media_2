@@ -34,6 +34,7 @@ add(){
     
     this.flashMessage.show('Your request has been sent successfully', { cssClass: 'alert-success', timeout: 1000 });
     this.add();
+    this.sendmessage();
   }
 
   sendmessage(){

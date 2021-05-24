@@ -39,7 +39,6 @@
             <textarea id="txt_message" rows="4" cols="20" Required required [(ngModel)]="contact.message" name="message" #message="ngModel" ></textarea>
             <div *ngIf="!message.valid && message.touched" class="alert alert-danger"  > the message is required </div>
  
-            <button (click)="sendmessage()" >send</button>
             <input type="submit" id="btn_send" value="SEND" (click) = "showFlash()">
            </form>
            </div>
