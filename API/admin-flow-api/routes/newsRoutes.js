@@ -64,16 +64,16 @@ router.put('/:id', (req, res) => {
 
   if(decoded){
   const { id } = req.params
-  const { title, description, url, imageUrl } = req.body;
+  const { title, description, url, urlToImage,  category, publishedDate  } = req.body;
 
   News.findById(id)
     .then(news => {
       news.title = title;
       news.description = description;
       news.url = url;
-      news.imageUrl = imageUrl;
-      news.publishedAt = news.publishedAt;
-      news.category = news.category;
+      news.urlToImage= urlToImage;
+      news.publishedAt = publishedDate;
+      news.category = category;
       return news.save()
     })
     .then(updatednews => res.json(updatednews))
