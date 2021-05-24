@@ -6,41 +6,35 @@
     <form [formGroup] = "addnewsForm">
         <div class="form-group">
             <label for="Title">Title</label>
-            <input formControlName= 'title' type="text" class="form-control" required>
+            <input formControlName= 'title' type="text" class="form-control zoom" required>
         </div>
         <div class="form-group">
             <label for="Description">Description</label>
-            <input formControlName= 'description' type="text" class="form-control" required>
+            <input formControlName= 'description' type="text" class="form-control zoom" required>
         </div>
         <div class="form-group">
             <label for="Url">Url</label>
-            <input formControlName= 'url' type="text" class="form-control" required>
+            <input formControlName= 'url' type="text" class="form-control zoom" required>
         </div>
         <div class="form-group">
             <label for="ImageUrl">ImageUrl</label>
-            <input formControlName= 'urlToImage' type="text" class="form-control" required>
+            <input formControlName= 'urlToImage' type="text" class="form-control zoom" required>
         </div>
         <div class="form-group">
             <label for="PublishedAt">publishedAt</label>
-            <input formControlName= 'publishedAt' type="date" class="form-control" required>
+            <input formControlName= 'publishedAt' type="date" class="form-control zoom" required>
         </div>
         <div class="form-group">
             <label for="Category">Category</label>
-            <input formControlName= 'category' type="text" class="form-control" required>
+            <input formControlName= 'category' type="text" class="form-control zoom" required>
         </div>
         <div class="text-center">
-            <input (click)='addValueToServer()' type="submit" value="Add" class="btn btn-primary">
-            <input type="reset" value="Reset" class="btn btn-warning">
+            <input (click)='addValueToServer()' type="submit" value="Add" class="btn btn-primary zoom w-25">
+            <input type="reset" value="Reset" class="btn btn-warning zoom w-25">
         </div>
 
     </form>
     </div>
 </div>
 
-<!-- {{addnewsForm.value|json}} -->
-<!-- Title , Desciption, Url, UrltoImage,published at, category 
-    Description: new FormControl("Desciption1 "),
-    Url : new FormControl('url 1'),
-    ImageUrl: new FormControl('imageUrl'),
-    PublishedAt : new FormControl('published At'),
-    Category: new FormControl('category')-->
+
