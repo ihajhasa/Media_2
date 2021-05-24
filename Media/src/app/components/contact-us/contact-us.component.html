@@ -22,24 +22,24 @@
          <div class="inside-contact">
             <h2>Contact Us</h2>
             <flash-messages></flash-messages>
-            <form  >
+            <form #userForm = 'ngForm' (ngSubmit)='showFlash()'>
             <p>Name *</p>
-            <input id="txt_name" type="text"  required  [(ngModel)]="contact.name" name="name" #name="ngModel"  />
+            <input id="txt_name" type="text"  required  [(ngModel)]="contactName" name="name" #name="ngModel"  />
             <div *ngIf="!name.valid && name.touched" class="alert alert-danger"  > Your name is required </div>
  
            <p>Email *</p>
-           <input required  id="txt_email" type="text" [(ngModel)]="contact.email" name="email" #email="ngModel" />
+           <input required  id="txt_email" type="text" [(ngModel)]="contactEmail" name="email" #email="ngModel" />
            <div *ngIf="!email.valid && email.touched" class="alert alert-danger"  > A valid email address is required </div>
             
             <p>Subject *</p>
-            <input required id="txt_subject" type="text" [(ngModel)]="contact.subject" name="subject" #subject="ngModel" />
+            <input required id="txt_subject" type="text" [(ngModel)]="contactSubject" name="subject" #subject="ngModel" />
             <div *ngIf="!subject.valid && subject.touched" class="alert alert-danger"  > A subject is required </div>
  
             <p>Message *</p>
-            <textarea id="txt_message" rows="4" cols="20" Required required [(ngModel)]="contact.message" name="message" #message="ngModel" ></textarea>
+            <textarea id="txt_message" rows="4" cols="20" Required required [(ngModel)]="contactMessage" name="message" #message="ngModel" ></textarea>
             <div *ngIf="!message.valid && message.touched" class="alert alert-danger"  > the message is required </div>
  
-            <input type="submit" id="btn_send" value="SEND" (click) = "showFlash()">
+            <input type="submit" id="btn_send" value="SEND">
            </form>
            </div>
       </div>
