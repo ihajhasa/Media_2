@@ -22,11 +22,7 @@
     "@angular/platform-browser-dynamic": "~12.0.0",
     "@angular/router": "~12.0.0",
     "@ng-bootstrap/ng-bootstrap": "^9.1.1",
-<<<<<<< HEAD
     "angular2-flash-messages": "^3.0.1",
-=======
-    "angular-font-awesome": "^3.1.2",
->>>>>>> f90d4a9b7e21f1e8a428e45f6bf00e167508dd74
     "bootstrap": "^4.5.0",
     "font-awesome": "^4.7.0",
     "ng-bootstrap": "^1.6.3",
