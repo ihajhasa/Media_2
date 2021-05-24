@@ -19,6 +19,7 @@
   background: white;
   border-radius: 10%;
   padding: 12px;
+
 }
 
 .icons {
@@ -30,3 +31,32 @@
   padding: 10px;
   cursor: pointer;
 }
+.showcase {
+  
+    
+  
+}
+video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .viewport-header {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .section1{
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;  }

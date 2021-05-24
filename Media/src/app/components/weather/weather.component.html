@@ -1,7 +1,6 @@
 
-<div style="background: lightgrey;">
-<div class="container" style="text-decoration-color: white;">
-	<div class="row">
+<!-- <div class="container" style="text-decoration-color: white;">
+	<div class="row"> -->
 		<!--<div class="col">
 			<div class="weather-card rain">
 				<div class="top" style="background: url('{{weatherImage}}')">
@@ -16,6 +15,7 @@
 					</div>
 				</div>
 		</div>-->
+		<div class="container">
 		<ng-container class="col-md-2" *ngFor='let day of fiveDayForecast' >
 			<div class= "row">
 			<div class = "wrapper" style="background: url('{{weatherImage}}');border-radius:15px 50px;">
@@ -28,12 +28,10 @@
 					<!--<p>{{day.dt_txt}}</p> if we want date-->
 				<!--</div>-->
 			</div>
-			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			
 			
 			</div>
 		</ng-container>
 	</div>
-</div>
-</div>
+	<!-- </div>
+</div> -->
